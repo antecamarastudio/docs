@@ -1,0 +1,4 @@
+/* site-wide tweaks */
+:root { --brand: #a31616; }
+header { background: #000; }
+.mintlify-code { border-radius: 0px; }
