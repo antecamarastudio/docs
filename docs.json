@@ -3,8 +3,8 @@
   "theme": "mint",
   "name": "txt docs",
   "colors": {
-    "primary": "#000000",
-    "light": "#000000",
+    "primary": "#262626",
+    "light": "#939393",
     "dark": "#000000"
   },
   "favicon": "/favicon.svg",
