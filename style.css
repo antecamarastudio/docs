@@ -1,4 +1,7 @@
 /* site-wide tweaks */
-:root { --brand: #a31616; }
-header { background: #000; }
+:root { --brand: #000000; }
+header { background: var(--brand); }
 .mintlify-code { border-radius: 0px; }
+.rounded-2xl {
+    border-radius: var(--rounded-2xl, 0rem);
+}
