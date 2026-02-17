@@ -17,12 +17,17 @@
         }
       ]
     },
-    "anchors": [
+    "products": [
       {
-        "anchor": "Pricing"
-      },
-      {
-        "anchor": "Fix your outputs"
+        "product": "Platform",
+        "tabs": [
+          {
+            "tab": "Quickstart",
+            "pages": [
+              "quickstart"
+            ]
+          }
+        ]
       }
     ]
   },

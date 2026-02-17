@@ -1,0 +1,119 @@
+---
+title: "Quickstart"
+mode: "default"
+---
+
+## Install
+
+<CodeGroup>
+
+```shellscript Python
+pip install openai pydantic
+```
+
+
+```shellscript TypeScript
+npm install ai @ai-sdk/openai
+```
+
+
+```shellscript CLI
+pip install dottxt
+```
+
+</CodeGroup>
+
+## Get an API Key
+
+Get access by emailing us at [contact us](mailto:contact@dottxt.ai) (include a short description of your use case).
+
+Then set your key as an environment variable:
+
+```shellscript
+export DOTTXT_API_KEY="your-key"
+```
+
+## Get structured data
+
+This API is OpenAI-compatible. Point your OpenAI SDK to https://api.dottxt.co/v1 and use your .txt API key. Below, we extract a typed Contact object from a string.
+
+<CodeGroup>
+
+```python Python
+import os
+from openai import OpenAI
+from pydantic import BaseModel, Field
+from typing import Optional
+
+class Contact(BaseModel):
+    name: str = Field(description="Full name")
+    email: str = Field(description="Email address")
+    role: Optional[str] = Field(default=None, description="Job title")
+
+
+client = OpenAI(
+    base_url="https://api.dottxt.co/v1",
+    api_key=os.environ["DOTTXT_API_KEY"],
+)
+
+response = client.beta.chat.completions.parse(
+    model="qwen3-30b",
+    messages=[{"role": "user", "content": "Extract: Rémi Louf <remi@dottxt.co>, CTO"}],
+    response_format=Contact,
+)
+
+contact = response.choices[0].message.parsed
+```
+
+
+```typescript TypeScript
+import { createOpenAI } from "@ai-sdk/openai";
+import { generateObject, jsonSchema } from "ai";
+
+const dottxt = createOpenAI({
+  baseURL: "https://api.dottxt.co/v1",
+  apiKey: process.env.DOTTXT_API_KEY!,
+});
+
+const contactSchema = jsonSchema({
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    email: { type: "string" },
+    role: { type: "string" },
+  },
+  required: ["name", "email"],
+});
+
+const { object } = await generateObject({
+  model: dottxt("qwen3-30b"),
+  schemaName: "contact",
+  schema: contactSchema,
+  prompt: "Extract: Rémi Louf <remi@dottxt.co>, CEO",
+});
+```
+
+
+```shellscript CLI
+> dottxt auth
+> echo "Extract: Rémi Louf <remi@dottxt.co>, CEO" | dottxt run -m qwen3-30b -s contact.json
+```
+
+</CodeGroup>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Structured Outputs Cookbook" icon="bullhorn" href="/json-schema">
+    Learn which patterns work best to generate JSON with large language models.
+  </Card>
+  <Card title="Integrations" icon="alien-8bit" href="/integrations">
+    Examples with Vercel AI SDK, Pydantic AI, LangChain and many more.
+  </Card>
+  <Card title="CLI" icon="sparkles" href="/cli">
+    Learn how to use our command line interface
+  </Card>
+  <Card title="API reference" icon="sparkles" href="/api">
+    Endpoints, parameters and errors
+  </Card>
+</Columns>
