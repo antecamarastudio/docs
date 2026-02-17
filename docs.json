@@ -28,6 +28,30 @@
               "models",
               "pricing"
             ]
+          },
+          {
+            "tab": "JSON Schema",
+            "groups": [
+              {
+                "group": "Generate JSON Schema",
+                "pages": [
+                  {
+                    "group": "From Libraries",
+                    "pages": [
+                      "pydentic",
+                      "zod-json-schema"
+                    ]
+                  },
+                  {
+                    "group": "From Data",
+                    "pages": [
+                      "quicktype",
+                      "genson"
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
