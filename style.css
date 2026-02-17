@@ -1,3 +1,4 @@
+/* Remove border radius from all elements */
 :root:root *,
 :root:root *::before,
 :root:root *::after {
