@@ -17,17 +17,12 @@
         }
       ]
     },
-    "products": [
+    "anchors": [
       {
-        "product": "Untitled Product",
-        "anchors": [
-          {
-            "anchor": "Pricing"
-          },
-          {
-            "anchor": "Fix your outputs"
-          }
-        ]
+        "anchor": "Pricing"
+      },
+      {
+        "anchor": "Fix your outputs"
       }
     ]
   },
