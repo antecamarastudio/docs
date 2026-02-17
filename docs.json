@@ -14,7 +14,16 @@
         {
           "anchor": "Models",
           "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Pricing",
+          "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Update",
+          "href": "https://mintlify.com/docs"
         }
+
       ]
     },
     "products": [
