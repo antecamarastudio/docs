@@ -24,7 +24,9 @@
           {
             "tab": "Quickstart",
             "pages": [
-              "quickstart"
+              "quickstart",
+              "models",
+              "pricing"
             ]
           }
         ]
