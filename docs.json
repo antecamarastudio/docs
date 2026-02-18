@@ -13,15 +13,18 @@
       "anchors": [
         {
           "anchor": "Models",
-          "href": "https://mintlify.com/docs"
+          "href": "https://mintlify.com/docs",
+          "icon": "/images/model.svg"
         },
         {
           "anchor": "Pricing",
-          "href": "https://mintlify.com/docs"
+          "href": "https://mintlify.com/docs",
+          "icon": "/images/pricing.svg"
         },
         {
-          "anchor": "Update",
-          "href": "https://mintlify.com/docs"
+          "anchor": "Fix your outputs",
+          "href": "https://mintlify.com/docs",
+          "icon": "/images/fix.svg"
         }
 
       ]
@@ -67,8 +70,8 @@
     ]
   },
   "logo": {
-    "light": "/favicon.svg",
-    "dark": "/favicon.svg",
+    "light": "/logo/logotxt.svg",
+    "dark": "/logo/logotxt-dark.svg",
     "href": "https://dottxt.ai"
   },
   "navbar": {

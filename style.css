@@ -1,6 +1,115 @@
+/* Custom fonts */
+@font-face {
+  font-family: 'NeueBit';
+  src: url('/fonts/NeueBit-Bold.woff2') format('woff2'),
+       url('/fonts/NeueBit-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueMontrealMono';
+  src: url('/fonts/PPNeueMontrealMono-Medium.woff2') format('woff2'),
+       url('/fonts/PPNeueMontrealMono-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('/fonts/PPNeueMontreal-Regular.woff2') format('woff2'),
+       url('/fonts/PPNeueMontreal-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Body text: PP Neue Montreal Regular */
+:root:root body {
+  font-family: 'PPNeueMontreal', sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* h1: NeueBit Bold */
+:root:root h1 {
+  font-family: 'NeueBit', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 3.5rem !important;
+}
+
+/* h2-h6: PP Neue Montreal Mono Thin, uppercase, 80% size */
+:root:root h2,
+:root:root h3,
+:root:root h4,
+:root:root h5,
+:root:root h6 {
+  font-family: 'PPNeueMontrealMono', monospace !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 110% !important;
+}
+
 /* Remove border radius from all elements */
 :root:root *,
 :root:root *::before,
 :root:root *::after {
   border-radius: 0 !important;
+}
+
+/* Card background color */
+:root:root .card {
+  background-color: #A4B2A1 !important;
+}
+
+:root:root.dark .card {
+  background-color: #0C0C0E !important;
+}
+
+/* Remove padding from anchor icons, scale image to fill */
+:root:root .nav-anchor > div:first-child {
+  padding: 0 !important;
+  filter: brightness(1) !important;
+  box-shadow: none !important;
+  transition: filter 0.2s ease !important;
+}
+
+:root:root .nav-anchor:hover > div:first-child {
+  filter: brightness(0.7) !important;
+}
+
+:root:root .nav-anchor > div:first-child img,
+:root:root .nav-anchor > div:first-child svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+/* Logo height = search box height */
+:root:root .nav-logo {
+  height: 2.25rem !important;
+}
+
+/* Footer */
+:root:root footer#footer {
+  background: linear-gradient(to right, #2A2422 70%, #713521 70%) !important;
+  border-top: none !important;
+  padding: 1.5rem 2rem 1.5rem !important;
+}
+
+:root:root footer#footer * {
+  color: #ffffff !important;
+}
+
+:root:root footer#footer svg {
+  background-color: #ffffff !important;
+}
+
+/*
+ * ESCONDER "Powered by Mintlify"
+ * Para voltar a mostrar, apagar ou comentar este bloco.
+ * Nota: remover isto quando tiver plano white-label do Mintlify.
+ */
+:root:root footer#footer > div:last-child {
+  display: none !important;
 }
